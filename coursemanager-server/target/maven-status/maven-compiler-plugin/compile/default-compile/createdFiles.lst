@@ -1,0 +1,4 @@
+coursemanager/models/Course.class
+coursemanager/services/CourseServices.class
+coursemanager/repositories/CourseRepository.class
+coursemanager/CourseManager.class

@@ -1,0 +1,4 @@
+/vagrant/coursemanager/src/main/java/coursemanager/models/Course.java
+/vagrant/coursemanager/src/main/java/coursemanager/services/CourseServices.java
+/vagrant/coursemanager/src/main/java/coursemanager/CourseManager.java
+/vagrant/coursemanager/src/main/java/coursemanager/repositories/CourseRepository.java
