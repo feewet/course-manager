@@ -1,0 +1,22 @@
+{
+  "name": "coursemanager",
+  "version": "0.0.1",
+  "description": "Course Manager Client",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feewet/CourseManager.git"
+  },
+  "author": "feewet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/feewet/CourseManager/issues"
+  },
+  "homepage": "https://github.com/feewet/CourseManager#readme",
+  "dependencies": {
+    "react": "^16.4.1"
+  }
+}
