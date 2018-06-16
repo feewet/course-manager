@@ -36,28 +36,29 @@ class CourseList extends React.Component {
   * Create a new Course
   */
   createCourse() {
-    this.courseService
-    .createCourse(this.state.course)
-    .then(() => {
-      this.findAllCourses()
-
-    })
+    if (this.state.course != undefined) {
+      this.courseService
+      .createCourse(this.state.course)
+      .then(() => {
+        this.findAllCourses()
+      })
+    }
   }
 
   /*
-   * Create list of course row elements
-   */
+  * Create list of course row elements
+  */
   courseRows() {
     var rows = this.state.courses.map((course) => {
       return <CourseRow key={course.id} course={course}
-              delete={this.deleteCourse}/>
+        delete={this.deleteCourse}/>
     });
     return ( rows )
   }
 
   /*
-   *
-   */
+  *
+  */
   titleChanged(event) {
     this.setState({
       course: { title: event.target.value }
@@ -77,17 +78,17 @@ class CourseList extends React.Component {
             </tr>
           </thead>
         </table>
-          <div>
-            <h2>Course List</h2>
-            <table>
-              <thead><tr><th>Title</th></tr></thead>
-              <tbody>
-                {this.courseRows()}
-              </tbody>
-            </table>
-          </div>
+        <div>
+          <h2>Course List</h2>
+          <table>
+            <thead><tr><th>Title</th></tr></thead>
+            <tbody>
+              {this.courseRows()}
+            </tbody>
+          </table>
         </div>
-      )
-    }
+      </div>
+    )
   }
-  export default CourseList;
+}
+export default CourseList;
