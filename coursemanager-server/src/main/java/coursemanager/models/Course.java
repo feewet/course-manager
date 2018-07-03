@@ -1,10 +1,16 @@
 package coursemanager.models;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Date;
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Course {
+	@OneToMany(mappedBy="course")
+	@JsonIgnore
+  private Set<Module> modules;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;

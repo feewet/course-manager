@@ -1,4 +1,7 @@
+coursemanager/services/ModuleService.class
+coursemanager/CourseManager.class
+coursemanager/models/Module.class
 coursemanager/models/Course.class
 coursemanager/services/CourseServices.class
+coursemanager/repositories/ModuleRepository.class
 coursemanager/repositories/CourseRepository.class
-coursemanager/CourseManager.class

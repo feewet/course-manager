@@ -1,6 +1,7 @@
 import React from 'react';
 import CourseRow from './CourseRow';
 import CourseService from '../services/CourseService';
+import ModuleList from './modules/ModuleList'
 
 class CourseList extends React.Component {
   constructor() {
@@ -71,7 +72,7 @@ class CourseList extends React.Component {
       <div>
         <table>
           <thead>
-            <tr><th>Title</th></tr>
+            <tr><th>Add Course</th></tr>
             <tr>
               <th><input onChange={this.titleChanged} placeholder="cs101"/></th>
               <th><button onClick={this.createCourse}>Add</button></th>
@@ -86,6 +87,11 @@ class CourseList extends React.Component {
               {this.courseRows()}
             </tbody>
           </table>
+        </div>
+        <div>
+          <h1>Course {this.state.courseId}</h1>
+          <ModuleList
+            courseId={this.state.courseId}/>
         </div>
       </div>
     )

@@ -3,15 +3,11 @@ class CourseEditor extends React.Component {
   constructor(props) {
     super(props);
     this.selectCourse = this.selectCourse.bind(this);
-    this.state = {courseId: ''};
+    this.state = {courseId: '1'};
   }
   selectCourse(courseId) {
     this.setState({courseId: courseId});
   }
-  render() {
-    return (<h3>Course {this.state.courseId}</h3>)
-  }
-
 
   conponentDidMount() {
     this.selectCourse
@@ -21,6 +17,10 @@ class CourseEditor extends React.Component {
   componentWillReceiveProps(newProps) {
     this.selectCourse
     (newProps.match.params.courseId)
+  }
+
+  render() {
+    return (<h3>Edit Course {this.state.courseId}</h3>)
   }
 }
 export default CourseEditor;
