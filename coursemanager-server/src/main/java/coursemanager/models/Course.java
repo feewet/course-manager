@@ -45,4 +45,10 @@ public class Course {
   public void setModified(Date modified) {
     this.modified = modified;
   }
+	public Set<Module> getModules() {
+		return modules;
+	}
+	public void setModules(Set<Module> modules) {
+		this.modules = modules;
+	}
 }

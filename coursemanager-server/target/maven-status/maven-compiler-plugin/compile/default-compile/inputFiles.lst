@@ -1,7 +1,10 @@
-/vagrant/course-manager/coursemanager-server/src/main/java/coursemanager/repositories/CourseRepository.java
-/vagrant/course-manager/coursemanager-server/src/main/java/coursemanager/services/CourseServices.java
-/vagrant/course-manager/coursemanager-server/src/main/java/coursemanager/repositories/ModuleRepository.java
-/vagrant/course-manager/coursemanager-server/src/main/java/coursemanager/models/Module.java
-/vagrant/course-manager/coursemanager-server/src/main/java/coursemanager/models/Course.java
-/vagrant/course-manager/coursemanager-server/src/main/java/coursemanager/CourseManager.java
-/vagrant/course-manager/coursemanager-server/src/main/java/coursemanager/services/ModuleService.java
+/vagrant/coursemanager-server/src/main/java/coursemanager/services/ModuleService.java
+/vagrant/coursemanager-server/src/main/java/coursemanager/models/Module.java
+/vagrant/coursemanager-server/src/main/java/coursemanager/repositories/CourseRepository.java
+/vagrant/coursemanager-server/src/main/java/coursemanager/models/Course.java
+/vagrant/coursemanager-server/src/main/java/coursemanager/models/Lesson.java
+/vagrant/coursemanager-server/src/main/java/coursemanager/CourseManager.java
+/vagrant/coursemanager-server/src/main/java/coursemanager/services/CourseServices.java
+/vagrant/coursemanager-server/src/main/java/coursemanager/services/LessonService.java
+/vagrant/coursemanager-server/src/main/java/coursemanager/repositories/ModuleRepository.java
+/vagrant/coursemanager-server/src/main/java/coursemanager/repositories/LessonRepository.java

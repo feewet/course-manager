@@ -1,5 +1,6 @@
 package coursemanager.models;
 
+import java.util.Set;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 
@@ -12,20 +13,37 @@ public class Module {
 	@ManyToOne
 	@JsonIgnore
 	private Course course;
+	@OneToMany(mappedBy="module")
+	@JsonIgnore
+	private Set<Lesson> lessons;
 
-  public String getTitle() {
-    return this.title;
-  }
+	public Set<Lesson> getLessons() {
+		return this.lessons;
+	}
+	public void setLessons(Set<Lesson> lessons) {
+		this.lessons = lessons;
+	}
+	public String getTitle() {
+		return this.title;
+	}
 
-  public Course getCourse() {
-    return this.course;
-  }
+	public Course getCourse() {
+		return this.course;
+	}
 
-  public void setTitle(String title) {
-    this.title = title;
-  }
+	public int getId() {
+		return id;
+	}
 
-  public void setCourse(Course course) {
-    this.course = course;
-  }
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public void setCourse(Course course) {
+		this.course = course;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 }

@@ -1,7 +1,7 @@
 import React from 'react';
-import CourseRow from './CourseRow';
+import CourseRow from '../components/CourseRow';
 import CourseService from '../services/CourseService';
-import ModuleList from './modules/ModuleList'
+import '../styles.css'
 
 class CourseList extends React.Component {
   constructor() {
@@ -70,7 +70,7 @@ class CourseList extends React.Component {
   render() {
     return (
       <div>
-        <table>
+        <table class='table-responsive'>
           <thead>
             <tr><th>Add Course</th></tr>
             <tr>
@@ -87,11 +87,6 @@ class CourseList extends React.Component {
               {this.courseRows()}
             </tbody>
           </table>
-        </div>
-        <div>
-          <h1>Course {this.state.courseId}</h1>
-          <ModuleList
-            courseId={this.state.courseId}/>
         </div>
       </div>
     )
