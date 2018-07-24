@@ -1,8 +1,10 @@
+let _singleton = Symbol();
 const MODULE_API_URL =
   'http://vagrant.local.com:9000/api/course/CID/module';
+  const MODULE_API_URL_SHORT =
+  'http://vagrant.local.com:9000/api/module'
 
-let _singleton = Symbol();
-export default class ModuleService {
+class ModuleService {
   constructor(singletonToken) {
     if (_singleton !== singletonToken)
       throw new Error('Singleton!!!');
@@ -28,9 +30,8 @@ export default class ModuleService {
   }
 
   // delete course given moduleId
-  deleteModule(courseId, moduleId) {
-    return fetch(MODULE_API_URL.replace('CID', courseId)
-    + '/' + moduleId,
+  deleteModule(moduleId) {
+    return fetch(MODULE_API_URL_SHORT + '/' + moduleId,
     {
       method: 'DELETE'
     })
@@ -42,3 +43,4 @@ export default class ModuleService {
     return this[_singleton]
   }
 }
+export default ModuleService;

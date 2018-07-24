@@ -2,19 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import '../styles.css'
 
-class ModuleRow extends React.Component {
+class LessonTab extends React.Component {
   render() {
     return (
       <tr>
         <td>
-          <Link to=
-            {`/edit/course/${this.props.courseId}/module/${this.props.module.id}/`}>
             {this.props.module.title}
-          </Link>
         </td>
         <td>
           <button onClick={() =>
-              {this.props.delete(this.props.module.id)}}>
+              {this.props.delete(this.props.lesson.id)}}>
               Delete
             </button>
           </td>
@@ -22,4 +19,4 @@ class ModuleRow extends React.Component {
       )
     }
   }
-  export default ModuleRow;
+  export default LessonTab;

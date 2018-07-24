@@ -43,4 +43,9 @@ VALUES
 INSERT INTO `module`
 (`title`, `course_id`)
 VALUES
-("module", 1)
+("module", 1);
+
+INSERT INTO `lesson`
+(`title`, `module_id`)
+VALUES
+("lesson1", 1);

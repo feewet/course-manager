@@ -1,6 +1,7 @@
 import React from 'react'
 import ModuleService from '../services/ModuleService'
 import ModuleRow from '../components/ModuleRow'
+import ModuleEditor from '../containers/ModuleEditor'
 import '../styles.css'
 export default class ModuleList extends React.Component {
 
@@ -12,13 +13,16 @@ export default class ModuleList extends React.Component {
     this.setModuleTitle = this.setModuleTitle.bind(this);
     this.setCourseId = this.setCourseId.bind(this);
     this.createModule = this.createModule.bind(this);
+    this.deleteModule = this.deleteModule.bind(this);
+    this.findAllModules = this.findAllModules.bind(this);
 
     this.state = {
-      courseId: 1,
+      courseId: props.courseId,
       module: {title: 'module'},
       modules: []
     };
   }
+
   componentDidMount() {
     console.log(this.props);
     this.setCourseId(this.props.courseId);
@@ -40,7 +44,6 @@ export default class ModuleList extends React.Component {
     this.moduleService.findAllModulesForCourse(this.state.courseId)
     .then((modules) => {
       this.setState({modules: modules});
-      console.log(modules)
     });
   }
 
@@ -53,6 +56,7 @@ export default class ModuleList extends React.Component {
 
   // delete module
   deleteModule(moduleId) {
+    console.log(this.moduleService)
     this.moduleService.deleteModule(moduleId)
     .then(() => { this.findAllModules(); });
   }
@@ -70,7 +74,11 @@ export default class ModuleList extends React.Component {
   // create module
   createModule() {
     console.log(this.state.courseId + ' ' + this.state.module)
-    this.moduleService.createModule(this.state.courseId, this.state.module);
+    this.moduleService
+    .createModule(this.state.courseId, this.state.module)
+    .then(() => {
+      this.findAllModules()
+    })
   }
 
   render() {
@@ -90,6 +98,11 @@ export default class ModuleList extends React.Component {
               {this.moduleRows()}
             </tbody>
           </table>
+        </div>
+        <div id= 'module-editor'>
+          <ModuleEditor key = {this.state.module.id}
+            courseId = {this.state.courseId}
+            moduleId = {this.state.module.id}/>
         </div>
       </div>
     )
